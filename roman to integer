@@ -1,0 +1,39 @@
+public static void main(String[] args) {
+		String str="iii";
+		int num=0,sum=0;
+		for(int i=str.length()-1;i>=0;i--)
+		{
+			switch(str.charAt(i))
+			{
+			case'i':
+				num=1;
+				break;
+			case'v':
+				num=5;
+				break;
+			case'x':
+				num=10;
+				break;
+			case'l':
+				num=50;
+				break;
+			case'c':
+				num=100;
+				break;
+			case'd':
+				num=500;
+				break;
+			case'm':
+				num=1000;
+				break;
+			
+			}
+			if(4*num<sum)
+				sum-=num;
+			else
+				sum+=num;
+		}
+
+	System.out.println(sum);
+	}
+}
