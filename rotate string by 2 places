@@ -1,0 +1,29 @@
+public static void main(String[] args) {
+		String str1="geeksforgeeks";
+		String str2="geeksgeeksfor";
+		int len=str1.length()-1;
+		System.out.println(check(str1,str2,len));
+		
+	
+}
+
+	private static int check(String str1, String str2, int len) {
+	String check1="";
+	String check2="";
+	int length=str2.length();
+	if(str1.length()!=str2.length())
+	{
+		return 0;
+	}
+	check1=str2.substring(length-2,length)+str2.substring(0,length-2);
+	 if(str1.equals(check1))
+	 {
+		 return 1;
+	 }
+	
+    return 0;
+	
+		
+	}
+}
+
