@@ -1,0 +1,23 @@
+int array1[]= {15,-2,2,-8,1,7,10,23};
+		int maxLen=0;
+		for(int i=0;i<array1.length;i++)
+		{
+			int sum=0;
+			for(int j=i;j<array1.length;j++)
+			{
+				sum+=array1[j];
+				if(sum==0)
+				{
+					if(maxLen<j-i+1)
+					{
+						maxLen=j-i+1;
+					}
+				}
+			}
+			
+		}
+		System.out.println(maxLen);
+	}
+	
+}
+	
