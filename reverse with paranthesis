@@ -1,0 +1,24 @@
+String str="(ed(et(oc))el)";
+		Stack<Character> stack=new Stack<>();
+		for(int i=0;i<str.length();i++)
+		{
+			if(str.charAt(i)==')')
+			{
+				Stack<Character> result=new Stack<>();
+				while(stack.peek()!='(')
+				{
+					result.push(stack.pop());
+				}
+				stack.pop();
+				for(int j=0;j<result.size();j++)
+				{
+					stack.push(result.get(j));
+				}
+			}
+			else
+			{
+				stack.push(str.charAt(i));
+			}
+		}
+		System.out.println(stack);
+		
