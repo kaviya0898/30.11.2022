@@ -1,0 +1,42 @@
+public class Practice {
+
+	public static void main(String[] args) {
+		String str="geeksforgeeks";
+		System.out.println(longest(str));
+}
+
+	private static int longest(String str) {
+		int n=str.length();
+		int res=0;
+		for(int i=0;i<n;i++)
+		{
+			for(int j=1;j<n;j++)
+			{
+				if(check(str,i,j))
+				{
+					if(res<j-i+1)
+					{
+						System.out.print(str.charAt(j));
+						res=j-i+1;
+					}
+				}
+			}
+		}
+		return res;
+	}
+
+	private static boolean check(String str, int start, int end) {
+		 int array[]=new int[256];
+		for(int i=start;i<=end;i++)
+		{
+			array[str.charAt(i)]++;
+			if(array[str.charAt(i)]>1)
+			{
+				
+				return false;
+			}
+		}
+		return true;
+	}
+		
+	}
